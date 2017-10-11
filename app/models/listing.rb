@@ -9,4 +9,12 @@ class Listing < ApplicationRecord
   def full_address
     [street_address, city, country.name].join(', ')
   end
+
+  def night_fee
+    Money.new(night_fee_cents, 'AUD').format #=> "$1.00"
+  end
+
+  def cleaning_fee
+    Money.new(cleaning_fee_cents, 'AUD').format #=> "$1.00"
+  end
 end
