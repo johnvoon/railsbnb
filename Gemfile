@@ -34,6 +34,9 @@ gem 'bootstrap', '~> 4.0.0.beta'
 gem 'countries'
 gem 'geocoder'
 gem 'money', '~> 6.9'
+gem "shrine"
+gem "react_on_rails", "9.0.0"
+gem "webpacker", "~> 3.0"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

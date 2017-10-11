@@ -1,4 +1,6 @@
 class Listing < ApplicationRecord
+  include ImageUploader::Attachment.new(:image) # adds an `image` virtual attribute
+
   geocoded_by :full_address
   after_validation :geocode
 
@@ -11,10 +13,10 @@ class Listing < ApplicationRecord
   end
 
   def night_fee
-    Money.new(night_fee_cents, 'AUD').format #=> "$1.00"
+    Money.new(night_fee_cents, 'AUD').format
   end
 
   def cleaning_fee
-    Money.new(cleaning_fee_cents, 'AUD').format #=> "$1.00"
+    Money.new(cleaning_fee_cents, 'AUD').format
   end
 end
