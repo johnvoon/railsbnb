@@ -1,5 +1,6 @@
 class ListingsController < ApplicationController
-  before_action :set_listing, only: [:show, :edit, :update, :destroy]
+  before_action :set_listing, only: %i[show edit update destroy]
+  layout 'application'
 
   # GET /listings
   # GET /listings.json
@@ -9,8 +10,7 @@ class ListingsController < ApplicationController
 
   # GET /listings/1
   # GET /listings/1.json
-  def show
-  end
+  def show; end
 
   # GET /listings/new
   def new
@@ -18,8 +18,7 @@ class ListingsController < ApplicationController
   end
 
   # GET /listings/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /listings
   # POST /listings.json
@@ -62,13 +61,14 @@ class ListingsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_listing
-      @listing = Listing.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def listing_params
-      params.require(:listing).permit(:title, :street_address, :city, :country_code, :bed_count, :bedroom_count, :bathroom_count, :description, :night_fee_cents, :cleaning_fee_cents, :image)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_listing
+    @listing = Listing.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def listing_params
+    params.require(:listing).permit(:title, :street_address, :city, :country_code, :bed_count, :bedroom_count, :bathroom_count, :description, :night_fee_cents, :cleaning_fee_cents, :image)
+  end
 end

@@ -85,6 +85,7 @@ GEM
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
+    libv8 (5.9.211.38.1-x86_64-linux)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -99,6 +100,8 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mini_portile2 (2.3.0)
+    mini_racer (0.1.11)
+      libv8 (~> 5.7)
     minitest (5.10.3)
     money (6.9.0)
       i18n (>= 0.6.4, < 0.9)
@@ -236,6 +239,7 @@ DEPENDENCIES
   geocoder
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
+  mini_racer
   money (~> 6.9)
   pg (~> 0.18)
   puma (~> 3.7)
